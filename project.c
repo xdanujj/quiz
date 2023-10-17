@@ -5,12 +5,14 @@ int science();
 int tech();
 void main()
 {
-   int ch,score=0;
+   int ch,score=0,x;
+   do{
+      x=2;
    printf("QUIZ GAME\n");
    printf("1.Science\n");
    printf("2.Sports\n");
    printf("3.Technology\n");
-   printf("Enter your choice according to the numbers given\n ");
+   printf("Enter your choice according to the numbers given \n");
    scanf("%d",&ch);
    scanf("%*c");
    switch(ch)
@@ -18,11 +20,14 @@ void main()
        case 1:score=science();break;
        case 2:score=sports();break;
        case 3:score=tech();break;
-       default:printf("enter a valid number i.e. 1,2 or 3");break;
+       default:x=1;printf("enter a valid number i.e. 1,2 or 3\n");break;
    }
-   printf("*******\n");
+   }while(x==1);
+   printf("*********************\n");
    printf("FINAL SCORE: %d/5\n", score);
-   printf("*******\n");
+   printf("*********************\n");
+   printf("THANK YOU FOR PLAYING!!!!\n");
+   printf("GAME MADE BY NISHAD,VEDIKA & ANUJ");
 }
 int science()
 {
@@ -44,9 +49,9 @@ int science()
    int score = 0;
    for(int i = 0; i < numberOfQuestions; i++)
    {
-      printf("*******\n");
+      printf("*********************\n");
       printf("%s\n", questions[i]);
-      printf("*******\n");
+      printf("*********************\n");
 
       for(int j = (i * 4); j < (i * 4) + 4; j++)
       {
@@ -55,7 +60,7 @@ int science()
 
       printf("guess: ");
       scanf("%c", &guess);
-      scanf("%*"); //clear \n from input buffer
+      scanf("%*c"); //clear \n from input buffer
 
       guess = toupper(guess);
 
@@ -73,7 +78,7 @@ int science()
 }
 int sports()
 {
-   char questions[][100] = {"1. Which sport is known as \"The Gentleman's Game\" ? ",
+   char questions[][100] = {"1. Which sport is known as \"The Gentleman's Game\"? ",
                             "2.In which sport would you execute a \"punch\" or a \"kick\"?",
                             "3. How many players are there in a standard soccer team?",
                             "4.Which cricketer is known as the \"God of Cricket\" in India?",
@@ -89,11 +94,11 @@ int sports()
    int numberOfQuestions = sizeof(questions)/sizeof(questions[0]);
    char guess = ' ';
    int score = 0;
-   for(int i = 0; i < numberOfQuestions ; i++)
+   for(int i = 0; i < numberOfQuestions; i++)
    {
-      printf("*******\n");
+      printf("*********************\n");
       printf("%s\n", questions[i]);
-      printf("*******\n");
+      printf("*********************\n");
 
       for(int j = (i * 4); j < (i * 4) + 4; j++)
       {
@@ -102,7 +107,7 @@ int sports()
 
       printf("guess: ");
       scanf("%c", &guess);
-      scanf("%*"); //clear \n from input buffer
+      scanf("%*c"); //clear \n from input buffer
 
       guess = toupper(guess);
 
@@ -121,10 +126,10 @@ int sports()
 int tech()
 {
    char questions[][100] = {"1. What does \"HTTP\" stand for in the context of web addresses? ",
-                            "2. Which technology is used to connect wireless devices within short ranges, often for transferring files or connecting peripherals?",
-                            "3. What does \"CPU\" stand for in computer technology?\n",
-                            "4.Who founded Apple ?\n",
-                            "5.Which company developed the Android operating system?\n"   };
+                            "2. Which technology is used to connect wireless devices within short ranges",
+                            "3. What does \"CPU\" stand for in computer technology?",
+                            "4.Who founded Apple ?",
+                            "5.Which company developed the Android operating system?"   };
 
    char options[][100] = {"A) Hyper Transfer Text Protocol","B) Hyperlink and Text Transfer Protocol","C) HyperText Transfer Protocol","D) High-Tech Text Transmission Protocol",
                           "A) Bluetooth","B) Wi-Fi","C) Ethernet","D) Infrared",
@@ -136,11 +141,11 @@ int tech()
    int numberOfQuestions = sizeof(questions)/sizeof(questions[0]);
    char guess = ' ';
    int score = 0;
-   for(int i = 0; i < 5; i++)
+   for(int i = 0; i < numberOfQuestions; i++)
    {
-      printf("*******\n");
+      printf("*********************\n");
       printf("%s\n", questions[i]);
-      printf("*******\n");
+      printf("*********************\n");
 
       for(int j = (i * 4); j < (i * 4) + 4; j++)
       {
@@ -149,7 +154,7 @@ int tech()
 
       printf("guess: ");
       scanf("%c", &guess);
-      scanf("%*");
+      scanf("%*c"); //clear \n from input buffer
 
       guess = toupper(guess);
 
