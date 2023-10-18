@@ -60,7 +60,7 @@ int science()
 
       printf("guess: ");
       scanf("%c", &guess);
-      scanf("%*c"); //clear \n from input buffer
+      scanf("%*c"); 
 
       guess = toupper(guess);
 
@@ -72,6 +72,7 @@ int science()
       else
       {
          printf("WRONG!\n");
+         printf("The correct answer is %c. \n",answers[i]);
       }
    }
     return score;
@@ -107,7 +108,7 @@ int sports()
 
       printf("guess: ");
       scanf("%c", &guess);
-      scanf("%*c"); //clear \n from input buffer
+      scanf("%*c"); 
 
       guess = toupper(guess);
 
@@ -119,6 +120,7 @@ int sports()
       else
       {
          printf("WRONG!\n");
+         printf("The correct answer is %c. \n",answers[i]);
       }
    }
     return score;
@@ -128,8 +130,8 @@ int tech()
    char questions[][100] = {"1. What does \"HTTP\" stand for in the context of web addresses? ",
                             "2. Which technology is used to connect wireless devices within short ranges",
                             "3. What does \"CPU\" stand for in computer technology?",
-                            "4.Who founded Apple ?",
-                            "5.Which company developed the Android operating system?"   };
+                            "4. Who founded Apple ?",
+                            "5. Which company developed the Android operating system?"   };
 
    char options[][100] = {"A) Hyper Transfer Text Protocol","B) Hyperlink and Text Transfer Protocol","C) HyperText Transfer Protocol","D) High-Tech Text Transmission Protocol",
                           "A) Bluetooth","B) Wi-Fi","C) Ethernet","D) Infrared",
@@ -154,7 +156,7 @@ int tech()
 
       printf("guess: ");
       scanf("%c", &guess);
-      scanf("%*c"); //clear \n from input buffer
+      scanf("%*c"); 
 
       guess = toupper(guess);
 
@@ -166,6 +168,7 @@ int tech()
       else
       {
          printf("WRONG!\n");
+         printf("The correct answer is %c. \n",answers[i]);
       }
    }
     return score;
